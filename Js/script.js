@@ -15,6 +15,7 @@ function addTask() {
 
     let taskItem = document.createElement('li');
     taskItem.className = 'todo-item';
+    let buffer = (taskItem.completed ? "btn-done" : "btn-done-completed");
     taskItem.innerHTML = `
                 <span>${taskText}</span>
                 <button class="btn-done" onclick="toggleTask(this)">✔</button>
@@ -39,7 +40,6 @@ function removeTask(button) {
 function toggleTask(button) {
     let taskItem = button.parentNode;
     taskItem.classList.toggle('completed');
-
     saveTasks();
 }
 
@@ -66,6 +66,7 @@ function loadTasks() {
         for (let i = 0; i < tasks.length; i++) {
             let taskItem = document.createElement('li');
             taskItem.className = 'todo-item' + (tasks[i].completed ? ' completed' : '');
+            let buffer = (tasks[i].completed ? "btn-done" : "btn-done-completed");
             taskItem.innerHTML = `
                         <span>${tasks[i].text}</span>
                         <button class="btn-done" onclick="toggleTask(this)">✔</button>

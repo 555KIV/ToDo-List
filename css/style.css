@@ -98,7 +98,7 @@ ul {
     background-color: #d9534f;
 }
 
-.todo-item .btn-done {
+.todo-item.completed .btn-done {
     background-color: #4caf50;
     color: #fff;
     border: none;
@@ -110,7 +110,24 @@ ul {
     margin-right: 5px;
 }
 
-.todo-item .btn-done:hover {
+.todo-item.completed .btn-done:hover {
     background-color: #45a049;
+}
+
+.todo-item .btn-done {
+    background-color: #fff;
+    color: #4caf50;
+    border: 2px solid #4caf50;
+    padding: 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 40px;
+    margin-right: 5px;
+}
+
+.todo-item .btn-done:hover {
+    background-color: #4caf50;
+    color: #fff;
 }
 
